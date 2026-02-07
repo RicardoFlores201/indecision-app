@@ -3,8 +3,8 @@
     <h3>Counter: {{ counter }}</h3>
     <h3>Square: {{ square }}</h3>
     <div>
-      <button @click="counter++">+1</button>
-      <button @click="counter--">-1</button>
+      <button v-on:click="add">+1</button>
+      <button v-on:click="substract">-1</button>
     </div>
   </section>
 </template>
@@ -16,5 +16,13 @@ import { computed, ref } from 'vue';
 const counter = ref(6);
 
 //Computed
-const square = computed(() => counter.value * counter.value);
+const square = computed((): number => counter.value * counter.value);
+
+const add = (): number => {
+  return counter.value++;
+};
+
+const substract = (): number => {
+  return counter.value--;
+};
 </script>
