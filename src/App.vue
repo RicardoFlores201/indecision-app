@@ -18,11 +18,7 @@ const counter = ref(6);
 //Computed
 const square = computed(() => counter.value * counter.value);
 
-const add = () => {
-  counter.value++;
-};
+const add = () => counter.value++;
 
-const substract = () => {
-  counter.value--;
-};
+const substract = () => counter.value--;
 </script>
