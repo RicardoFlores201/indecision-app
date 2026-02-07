@@ -16,13 +16,13 @@ import { computed, ref } from 'vue';
 const counter = ref(6);
 
 //Computed
-const square = computed((): number => counter.value * counter.value);
+const square = computed(() => counter.value * counter.value);
 
-const add = (): number => {
-  return counter.value++;
+const add = () => {
+  counter.value++;
 };
 
-const substract = (): number => {
-  return counter.value--;
+const substract = () => {
+  counter.value--;
 };
 </script>
