@@ -1,13 +1,14 @@
 <template>
   <h1>MI PRIMERA APP</h1>
   <hr />
-  <MyCounter />
+  <MyCounter :value="8" />
   <hr />
-  <MyCounter />
+  <MyCounter :value="9" />
   <hr />
-  <MyCounter />
+  <MyCounterScript :value="7" />
 </template>
 
 <script lang="ts" setup>
 import MyCounter from './components/MyCounter.vue';
+import MyCounterScript from './components/MyCounterScript.vue';
 </script>

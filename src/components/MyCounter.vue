@@ -12,13 +12,17 @@
 <script lang="ts" setup>
 import { computed, ref } from 'vue';
 
+interface Props {
+  value: number;
+}
+const props = defineProps<Props>();
+
 //Variable reactiva
-const counter = ref(6);
+const counter = ref(props.value);
 
 //Computed
 const square = computed(() => counter.value * counter.value);
 
 const add = () => counter.value++;
-
 const substract = () => counter.value--;
 </script>
