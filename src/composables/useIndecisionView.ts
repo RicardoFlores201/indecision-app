@@ -16,11 +16,16 @@ export function useIndecisionView() {
     },
   ]);
 
-  // aquí luego agregas acciones
-  // const sendMessage = (text: string) => {...}
+  function addUserMessage(text: string) {
+    messages.value.push({
+      id: Date.now(),
+      itsMine: true,
+      message: text,
+    });
+  }
 
   return {
     messages,
-    // sendMessage
+    addUserMessage,
   };
 }

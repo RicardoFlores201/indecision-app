@@ -4,15 +4,19 @@
 
     <ChatMessages :messages="messages" />
 
-    <MessageBox />
+    <MessageBox @send-message="onMessage" />
   </div>
 </template>
 
 <script setup lang="ts">
 import ChatMessages from '@/chat/chatMessages.vue';
 import MessageBox from '@/chat/messageBox.vue';
-import { useIndecisionView } from '../composables/useIndecisionView';
 import ChatHeader from '@/chat/ChatHeader.vue';
+import { useIndecisionView } from '../composables/useIndecisionView';
 
-const { messages } = useIndecisionView();
+const { messages, addUserMessage } = useIndecisionView();
+
+function onMessage(text: string) {
+  addUserMessage(text);
+}
 </script>
